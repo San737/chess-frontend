@@ -4,6 +4,19 @@ import { Chessboard } from "react-chessboard";
 
 export default function PlayRandomMoveEngine() {
   const [game, setGame] = useState(new Chess());
+  if (game.in_checkmate()) {
+    alert(`Checkmate! ${game.turn() === 'w' ? 'Black' : 'White'} wins.`);
+  } else if (game.in_draw()) {
+    alert("It's a draw!");
+  } else if (game.in_stalemate()) {
+    alert("Stalemate!");
+  } else if (game.in_threefold_repetition()) {
+    alert("Draw by threefold repetition.");
+  } else if (game.insufficient_material()) {
+    alert("Draw due to insufficient material.");
+  }
+
+
 
   function makeAMove(move) {
     const gameCopy = { ...game };
