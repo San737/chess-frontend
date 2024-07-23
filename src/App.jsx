@@ -3,7 +3,8 @@ import { BrowserRouter,Route, Routes } from "react-router-dom";
 import './App.css'
 
 import { Landing } from "./screens/Landing";
-import { Game } from "./screens/Game";
+import { ComputerGame } from "./screens/ComputerGame";
+import { OnlineGame } from "./screens/OnlineGame"
 
 function App() {
   
@@ -14,7 +15,8 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />}/>
-        <Route path="/game" element={<Game />}/> 
+        <Route path="/game" element={<ComputerGame />}/> 
+        <Route path="/online" element={<OnlineGame />}/> 
       </Routes>
     </BrowserRouter>
       
